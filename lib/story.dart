@@ -28,6 +28,7 @@ class _StoryState extends State<Story>{
     return Container(
       padding: EdgeInsets.only(left: 30,right: 30,top: 10),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,17 +41,27 @@ class _StoryState extends State<Story>{
               SizedBox(
                 height: 10,),
 
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 30,vertical: 5),
-                decoration: ShapeDecoration(
-                  color: Color.fromARGB(255, 248, 112, 111),
-                  shape: StadiumBorder(),
-                ),
-                child: Text("Animated",style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600
-                ),),
+              Row(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 30,vertical: 5),
+                    decoration: ShapeDecoration(
+                      color: Color.fromARGB(255, 248, 112, 111),
+                      shape: StadiumBorder(),
+                    ),
+                    child: Text("Animated",style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600
+                    ),),
+                  ),
+                  SizedBox(width: 10,),
+                  Text("10+ Stories", style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    color: Color.fromARGB(255, 79,  113, 164)
+                  ),)
+                ],
               )
             ],
           ),
