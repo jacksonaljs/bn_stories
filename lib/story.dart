@@ -12,20 +12,56 @@ class _StoryState extends State<Story>{
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color.fromARGB(255, 45, 52, 71),
-                  Color.fromARGB(255, 26, 30, 68),
-                ]
+          _buildBackground(),
+          Column(
+            children: <Widget>[
+              _buildNavigationBar(),
+              Container(
+                child: Placeholder(),
               )
-            ),
+            ],
           )
         ],
       ),
     );
   }
+
+  
+  _buildNavigationBar(){
+    return SafeArea(
+       bottom: false,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            children: <Widget>[
+              IconButton(
+                onPressed: (){},
+                icon: Icon(Icons.menu,color: Colors.white,size: 30,),
+              ),
+              Spacer(),
+              IconButton(
+                onPressed: (){},
+                icon: Icon(Icons.search,color: Colors.white,size: 30,),
+              )
+            ],
+          ),
+        )
+    );
+  }
+
+  _buildBackground(){
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color.fromARGB(255, 45, 52, 71),
+                Color.fromARGB(255, 26, 30, 68),
+              ]
+          )
+      ),
+    );
+  }
+
 }
